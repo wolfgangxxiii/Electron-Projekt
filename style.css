@@ -1,0 +1,174 @@
+/* Styl podstawowy dla całego dokumentu i ciała strony */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+    align-items: center; /* Wyśrodkowanie zawartości w pionie */
+    font-family: Arial, sans-serif; /* Ustawienie rodziny czcionek */
+    background-color: #f4f4f4; /* Ustawienie koloru tła */
+}
+
+/* Styl dla treści modalnych (okien dialogowych) */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px; /* Zaokrąglone rogi */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4); /* Cień dla elementu */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    display: flex;
+    flex-direction: column; /* Elementy wewnątrz ułożone pionowo */
+    align-items: center; /* Wyśrodkowanie elementów poziomo */
+}
+
+/* Styl dla przycisków */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer; /* Kursor w formie ręki wskazującej */
+    background-color: #007BFF; /* Niebieskie tło */
+    color: white; /* Biały tekst */
+    border: none;
+    border-radius: 5px; /* Zaokrąglone rogi przycisku */
+    width: 80%; /* Szerokość przycisku */
+}
+
+/* Efekt dla przycisków po najechaniu kursorem */
+button:hover {
+    background-color: #0056b3; /* Ciemniejszy niebieski */
+    transition: background-color 0.3s; /* Animacja zmiany koloru */
+}
+
+/* Efekt dla przycisków podczas kliknięcia */
+button:active {
+    transform: scale(0.98); /* Lekkie zmniejszenie przycisku */
+}
+
+/* Styl dla modali (okien dialogowych) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Półprzezroczyste tło */
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+    align-items: center; /* Wyśrodkowanie zawartości w pionie */
+    animation: fadeIn 0.5s; /* Animacja pojawienia się */
+}
+
+/* Animacja zanikania dla modali */
+.modal.hide {
+    animation: fadeOut 0.5s;
+}
+
+/* Keyframes dla animacji fadeIn */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Keyframes dla animacji fadeOut */
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* Styl dla planszy do gry, domyślnie ukrytej */
+.game-board {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styl wyświetlacza tury */
+.turn-display {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333; /* Ciemnoszary tekst */
+}
+
+/* Styl dla siatki gry */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Trzy kolumny */
+    grid-gap: 10px; /* Odstępy między komórkami */
+}
+
+/* Styl komórek planszy */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white; /* Białe tło */
+    display: flex;
+    align-items: center; /* Wyśrodkowanie zawartości w pionie */
+    justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+    font-size: 36px; /* Rozmiar czcionki */
+    color: #333; /* Ciemnoszary tekst */
+    cursor: pointer; /* Kursor w formie ręki wskazującej */
+    border: 1px solid #ddd; /* Jasnoszara ramka */
+    transition: background-color 0.3s; /* Animacja zmiany koloru tła */
+}
+
+/* Animacja pojawienia się symboli X i O */
+.cell.x::before, .cell.o::before {
+    animation: popIn 0.5s ease;
+}
+
+/* Keyframes dla animacji popIn */
+@keyframes popIn {
+    from {
+        transform: scale(0); /* Start od zera */
+        opacity: 0; /* Start od niewidoczności */
+    }
+    to {
+        transform: scale(1); /* Końcowa skala */
+        opacity: 1; /* Końcowa widoczność */
+    }
+}
+
+/* Styl dla symbolu X */
+.cell.x::before {
+    content: 'X';
+    color: red;
+    font-size: 2em;
+}
+
+/* Styl dla symbolu O */
+.cell.o::before {
+    content: 'O';
+    color: blue;
+    font-size: 2em;
+}
+
+/* Styl dla treści modali, gdy gra się zakończy lub pokazujące informacje o twórcy */
+#gameOverModal .modal-content, #creatorInfoModal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideInUp 0.5s forwards;
+}
+
+/* Keyframes dla animacji slideInUp */
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px); /* Start z przesunięciem w dół */
+        opacity: 0; /* Start od niewidoczności */
+    }
+    to {
+        transform: translateY(0); /* Końcowa pozycja */
+        opacity: 1; /* Końcowa widoczność */
+    }
+}
+
+/* Styl dla wiadomości końcowej gry lub paragrafów w modalu informacji o twórcy */
+#gameOverModal #gameOverMessage, #creatorInfoModal p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
