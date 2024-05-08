@@ -1,4 +1,4 @@
-1.	Pobierz pliki: Osoba druga powinna pobrać pliki
+1.	Pobierz pliki:
 index.html, 
 index.js, 
 package.json, 
@@ -7,7 +7,7 @@ preload.js,
 script.js, 
 style.css.
 
-2.	Zainstaluj zależności: W folderze projektu, gdzie znajdują się pobrane pliki, osoba ta powinna otworzyć terminal i wykonać polecenie "npm install", aby zainstalować zależności projektu.
+2.	Zainstaluj zależności: W folderze projektu, gdzie znajdują się pobrane pliki, otworzyć terminal i wykonać polecenie "npm install", aby zainstalować zależności projektu.
 
 3.	Uruchomienie aplikacji: Po zakończeniu instalacji zależności, należy wprowadzić polecenie "npm start" w terminalu. Spowoduje to uruchomienie aplikacji Electron i wyświetlenie gry w oknie aplikacji.
    
