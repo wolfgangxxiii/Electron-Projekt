@@ -1,16 +1,14 @@
 {
   "name": "tic-tac-toe",
   "version": "1.0.0",
+  "description": "Tic Tac Toe game built with Electron",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Szymon Piotr BŁAWAT",
+  "license": "MIT",
   "dependencies": {
-    "electron": "^30.0.2"
-  },
-  "devDependencies": {},
-  "description": ""
+    "electron": "^15.0.0"
+  }
 }
