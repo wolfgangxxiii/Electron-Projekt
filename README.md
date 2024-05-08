@@ -1,4 +1,5 @@
 Projekt gry "Kółko i krzyżyk" oparty na technologii Electron to aplikacja desktopowa oraz urządzenia mobilne.
+
 Opis projektu:
 1.	Technologia: Projekt wykorzystuje technologię Electron, która pozwala na tworzenie aplikacji desktopowych przy użyciu języków webowych takich jak HTML, CSS i JavaScript.
 2.	Funkcje: Aplikacja umożliwia grę w "Kółko i krzyżyk" w dwóch trybach: z przyjacielem oraz z komputerem. Gracze mogą wybierać między tymi dwoma trybami na początku gry.
