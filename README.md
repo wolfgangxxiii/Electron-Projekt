@@ -1,93 +1,65 @@
-# 🎮 Kółko i Krzyżyk - Electron Projekt
+<div align="center">
 
-**Repozytorium:** [GitHub](https://github.com/wolfgangxxiii/Electron-Projekt)  
-**Demo online:** [Netlify](https://electron-projekt.netlify.app/)
+# 🎮 Tic-Tac-Toe · Electron
 
----
+**Kółko i krzyżyk w oknie aplikacji — zagraj ze znajomym albo z komputerem.**
 
-## 📌 Opis
+![Electron](https://img.shields.io/badge/Electron-15-47848F?style=flat-square&logo=electron&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML + CSS](https://img.shields.io/badge/HTML%20%2B%20CSS-334155?style=flat-square)
+![Status](https://img.shields.io/badge/Typ-Desktop%20%2B%20Web-2563EB?style=flat-square)
 
-„Kółko i krzyżyk” to klasyczna gra stworzona w technologii **Electron**, umożliwiająca rozgrywkę w formie **aplikacji desktopowej** na systemy Windows, macOS i Linux, a także w przeglądarce.
+[🌐 Demo online](https://electron-projekt.netlify.app/) · [⚡ Uruchomienie](#-uruchomienie) · [🧩 Kod](#-struktura-projektu)
 
-Projekt pozwala grać:
-- 🎮 **Z przyjacielem** (lokalnie na jednym urządzeniu)
-- 🤖 **Z komputerem** (prosta sztuczna inteligencja wykonująca losowe ruchy)
-
----
-
-## 🧩 Technologie
-
-- **Electron** — framework do budowania aplikacji desktopowych z użyciem HTML, CSS i JavaScript.
-- **HTML, CSS, JavaScript** — implementacja interfejsu, logiki gry i stylizacji.
-- **Prosty AI** — komputer wykonuje ruchy na podstawie wolnych pól na planszy.
+</div>
 
 ---
 
-## 🕹️ Funkcje
+## ✨ Funkcje
 
-✅ Wybór trybu gry: z przyjacielem lub komputerem  
-✅ Intuicyjna plansza 3x3  
-✅ Automatyczne wykrywanie zwycięzcy lub remisu  
-✅ Wyświetlanie komunikatów końcowych  
-✅ Minimalistyczny, responsywny design
+| 👥 Gra lokalna | 🤖 Gra z komputerem | 🏁 Wynik |
+| :--- | :--- | :--- |
+| Dwie osoby na jednej planszy 3 × 3 | Komputer wykonuje losowe ruchy | Wykrywanie trzech znaków w linii i remisu |
 
----
+- Wybór trybu w menu głównym.
+- Komunikat o zakończeniu partii.
+- Ponowna rozgrywka lub powrót do menu.
+- Interfejs zbudowany w HTML, CSS i JavaScript.
 
-## ⚙️ Instrukcja uruchomienia
+> Sztuczna inteligencja **nie analizuje strategii** — losuje jedno z dostępnych pól.
 
-### 1️⃣ Pobierz projekt
+## ⚡ Uruchomienie
 
-Sklonuj repozytorium lub pobierz pliki:
-```
-index.html, index.js, package.json, package-lock.json, preload.js, script.js, style.css
-```
+Wymagane: **Node.js i npm**. Aplikacja wykorzystuje Electron zdefiniowany w `package.json`.
 
-### 2️⃣ Zainstaluj zależności
-
-W katalogu projektu uruchom w terminalu:
-```bash
-npm install
-```
-
-### 3️⃣ Uruchom aplikację
-
-Po zakończeniu instalacji wpisz:
-```bash
+~~~bash
+git clone https://github.com/wolfgangxxiii/Electron-Projekt.git
+cd Electron-Projekt
+npm ci
 npm start
-```
+~~~
 
-Aplikacja otworzy się w oknie Electron i umożliwi rozgrywkę.
+Jeśli chcesz obejrzeć interfejs w przeglądarce, skorzystaj z [wersji demonstracyjnej na Netlify](https://electron-projekt.netlify.app/). Niektóre operacje desktopowe (np. zamknięcie okna przez API Electron) wymagają uruchomienia w Electronie.
 
----
+## 🧩 Struktura projektu
 
-## 🚀 Demo online
+| Plik | Rola |
+| :--- | :--- |
+| [`index.js`](index.js) | Proces główny Electron i okno aplikacji |
+| [`preload.js`](preload.js) | Bezpieczny pomost do wybranych funkcji desktopowych |
+| [`index.html`](index.html) | Elementy interfejsu |
+| [`script.js`](script.js) | Zasady rozgrywki i ruch komputera |
+| [`style.css`](style.css) | Styl i animacje interfejsu |
+| [`package.json`](package.json) | Zależności i polecenie `npm start` |
 
-Chcesz wypróbować grę bez instalacji?  
-👉 [Zagraj w wersję webową](https://electron-projekt.netlify.app/)
+## 🛠️ Pomysły na rozwój
 
----
+- [ ] Bardziej wymagający przeciwnik (np. minimax)
+- [ ] Zapisywanie statystyk i serii zwycięstw
+- [ ] Dodatkowe motywy graficzne
 
-## 💡 Plany rozwoju
+## 📄 Licencja i autor
 
-- ✅ Ulepszenie AI (bardziej inteligentna strategia)
-- ✅ Zapis statystyk gracza
-- ✅ Tryb multiplayer online
-- ✅ Nowe style planszy i motywy kolorystyczne
+Projekt: **Szymon Piotr Bławat** · [GitHub](https://github.com/wolfgangxxiii).
 
----
-
-## 📜 Licencja
-
-Projekt udostępniony na licencji **MIT**.
-
----
-
-## 🤝 Autor
-
-**WolfgangXXIII**
-
-Zapraszam do zgłaszania **issue**, propozycji rozwoju lub pull requestów! 🚀
-
----
-
-**Miłej gry i powodzenia!**
+**Uwaga dotycząca licencji:** [`LICENSE.txt`](LICENSE.txt) zawiera Apache 2.0, natomiast `package.json` deklaruje MIT. Te oznaczenia wymagają ujednolicenia przez autora.
